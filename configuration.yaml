@@ -1,0 +1,33 @@
+mqtt:
+ broker: 192.168.10.10
+ port: 1883
+ client_id: itolab-home-assistant-1
+ username: pi
+ password: raspberry
+ 
+
+binary_sensor:
+  - platform: mqtt
+    name: 'Motion'
+    state_topic: '/mail/motion'
+    sensor_class: motion
+    
+ 
+ notify:
+  - name: Mail_Notifier
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 60
+    sender: YOU-EMAIL AS EMAIL
+    encryption: starttls
+    username: YOUR-EMAIL
+    password: GMAIL APPLICATION PASSWORD
+    recipient:
+      - EXAMPLE@RECIPIENT1 AS EMAIL
+      - EXAMPLE@RECIPIENT2 AS EMAIL
+    sender_name: SENDER NAME AS STRING
+ ≈ - name: push_bullet
+    platform: pushbullet
+    api_key: o.bY2EniiXtt8SCHmky0XnGh7yAHDdXKYM
+
