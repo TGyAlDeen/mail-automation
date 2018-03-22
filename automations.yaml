@@ -1,0 +1,17 @@
+alias: 'Send email when new mail arrives'
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: binary_sensor.motion
+  to: 'on'
+action:
+  - service: light.turn_on            # the name of the service in configuration.yaml file
+    entity_id: light.lamp_1
+  - service: notify.Mail_Notifier
+    data:
+      title: 'Message Title'
+      message: 'New Mail, please check 7th floor!!'
+  - service: notify.push_bullet
+    data:
+      title: New Mail arrived
+      message: please chech the mail box
