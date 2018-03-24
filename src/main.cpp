@@ -3,9 +3,9 @@
 #include <ArduinoJson.h>
 
 // Update these with values suitable for your network.
-const char* ssid = "IOT Network";
-const char* password = "tagyaldeen";
-const char* mqtt_server = "192.168.10.10";
+const char* ssid = "NETWORK SSID";
+const char* password = "PASSWORD";
+const char* mqtt_server = "BOKER SERVER IP";
 #define mqtt_port 1883
 #define MQTT_USER "pi"
 #define MQTT_PASSWORD "raspberry"
